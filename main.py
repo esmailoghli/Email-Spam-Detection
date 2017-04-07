@@ -176,8 +176,6 @@ for i in range(numEpochs):
             print("step %d, training accuracy %g"%(i, train_accuracy))
             print("step %d, cost %g"%(i, newCost))
             print("step %d, change in cost %g"%(i, diff))
-            # Plot progress to our two subplots
-            time.sleep(1)
 # How well do we perform on held-out test data?
 print("final accuracy on test set: %s" %str(sess.run(accuracy_OP, feed_dict={X: testX, yGold: testY})))
 
