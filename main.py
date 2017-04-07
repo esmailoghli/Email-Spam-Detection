@@ -181,8 +181,8 @@ print("final accuracy on test set: %s" %str(sess.run(accuracy_OP, feed_dict={X: 
 
 
 for j in range(104):
-    print(" Pobabilities of object %d :  %s" %(j,str(sess.run(activation_OP, feed_dict={X: testX[[j],[1]]}))))
-    print("True label is: %s" %str(testY[[j],:]))
+    print(" Pobabilities of object %d :  %s" %(j,str(sess.run(activation_OP, feed_dict={X: testX[[j],:]}))))
+    print("True label is: %s" %str(testY[[j],[1]]))
 
 ##############################
 ### SAVE TRAINED VARIABLES ###
