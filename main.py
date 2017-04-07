@@ -179,10 +179,8 @@ for i in range(numEpochs):
 # How well do we perform on held-out test data?
 print("final accuracy on test set: %s" %str(sess.run(accuracy_OP, feed_dict={X: testX, yGold: testY})))
 
-
 for j in range(104):
-    print(" Pobabilities of object %d :  %s" %(j,str(sess.run(activation_OP, feed_dict={X: testX[[j],:]}))))
-    print("True label is: %s" %str(testY[[j],[1]]))
+    print(" Pobabilities of object %d :  %s and true label is: %s" %(j,str(sess.run(activation_OP, feed_dict={X: testX[[j],:]})),str(testY[[j],[1]])))
 
 ##############################
 ### SAVE TRAINED VARIABLES ###
