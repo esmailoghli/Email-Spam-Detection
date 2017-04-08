@@ -5,6 +5,9 @@ import os
 from __future__ import division
 import tensorflow as tf
 
+def csv_to_numpy_array(filePath, delimiter):
+    return np.genfromtxt(filePath, delimiter=delimiter, dtype=None)
+
 # Import MNIST data
 print("loading training data")
 trainX = csv_to_numpy_array("data/trainX.csv", delimiter="\t")
