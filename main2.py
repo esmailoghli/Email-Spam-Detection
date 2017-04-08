@@ -23,8 +23,8 @@ display_step = 1
 
 # tf Graph Input
 
-x = tf.placeholder(tf.float32, [None, 2955]) # mnist data image of shape 28*28=784
-y = tf.placeholder(tf.float32, [None, 2]) # 0-9 digits recognition => 10 classes
+x = tf.placeholder(tf.float32, [None, 2955]) 
+y = tf.placeholder(tf.float32, [None, 2]) 
 
 # Set model weights
 W = tf.Variable(tf.zeros([2955, 2]))
@@ -40,7 +40,6 @@ optimizer = tf.train.GradientDescentOptimizer(learning_rate).minimize(cost)
 
 # Initializing the variables
 init = tf.global_variables_initializer()
-
 	
 with tf.Session() as sess:
      sess.run(init)
