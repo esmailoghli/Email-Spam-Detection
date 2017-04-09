@@ -82,8 +82,6 @@ training_OP = tf.train.GradientDescentOptimizer(learningRate).minimize(cost_OP)
 #####################
 ### RUN THE GRAPH ###
 #####################
-accuracy_values=[]
-cost_values=[]
 
 sess = tf.Session()
 sess.run(init_OP)
@@ -108,9 +106,6 @@ for i in range(numEpochs):
                 [accuracy_OP, cost_OP], 
                 feed_dict={X: trainX, yGold: trainY}
             )
-            accuracy_values.append(train_accuracy)
-            # Add cost to live graphing variable
-            cost_values.append(newCost)
             diff = abs(newCost - cost)
             cost = newCost
             print("step %d, training accuracy %g"%(i, train_accuracy))
