@@ -56,8 +56,8 @@ yGold = tf.placeholder(tf.float32, [None, numLabels])
 ### VARIABLES ###
 #################
 
-weights = tf.Variable(tf.zeros([numFeatures,numLabels])
-bias = tf.Variable(tf.zeros([numFeatures,numLabels])
+weights = tf.Variable(tf.zeros([numFeatures,numLabels]))
+bias = tf.Variable(tf.zeros([numFeatures,numLabels]))
 ######################
 ### PREDICTION OPS ###
 ######################
