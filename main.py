@@ -7,7 +7,6 @@ import tensorflow as tf
 import numpy as np
 import tarfile
 import os
-import time
 
 ###################
 ### IMPORT DATA ###
