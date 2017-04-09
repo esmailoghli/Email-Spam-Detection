@@ -104,16 +104,13 @@ for i in range(numEpochs):
         step = sess.run(training_OP, feed_dict={X: trainX, yGold: trainY})
         # Report occasional stats
         if i % 10 == 0:
-            summary_results, train_accuracy, newCost = sess.run(
-                [all_summary_OPS, accuracy_OP, cost_OP], 
+            train_accuracy, newCost = sess.run(
+                [accuracy_OP, cost_OP], 
                 feed_dict={X: trainX, yGold: trainY}
             )
             accuracy_values.append(train_accuracy)
             # Add cost to live graphing variable
             cost_values.append(newCost)
-            # Write summary stats to writer
-            writer.add_summary(summary_results, i)
-            # Re-assign values for variables
             diff = abs(newCost - cost)
             cost = newCost
             print("step %d, training accuracy %g"%(i, train_accuracy))
